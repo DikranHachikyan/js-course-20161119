@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Page 01</title>
+	<script type="text/javascript" >
+	var msg;
+	//----------------------------------------------------
+	//console.log('typeof 1:' + (typeof 1));
+	//console.log('typeof hello:' + (typeof 'hello'));
+	//console.log('typeof variable x:' + (typeof x ));
+	//---------------------------------------------------
+	//1. Декларация на собствена функция
+	function showMessage(text, level){
+		
+		if( typeof text != 'string' || text == '' ){
+			console.log('text няма стойност ('+ text+ ')');
+			text = "Празно съобщение";
+		}
+		if( level < 1 || level > 6 ){
+			console.log('Грешна стойност за level:' + level);
+			level = 3;
+		}
+		document.write('<h' + level + '>' + text + '</h' + level + '>');
+
+	}
+
+    //2. извикваме я
+    showMessage('Проверете въведените данни',2);
+    showMessage( msg, 3);
+    showMessage('Успешна регистрация!',3);
+    showMessage('Продуктът не е в наличност', 12);
+    showMessage('Добавихте продукт в ...',2);
+
+	</script>
+</head>
+<body>
+	<h1>Lorem ipsum dolor sit amet</h1>
+	<noscript>
+		Моля, разрешете JS или ползвайте HTML варианта на сайта
+		<a href="#">тук</a>
+	</noscript>
+</body>
+</html>
