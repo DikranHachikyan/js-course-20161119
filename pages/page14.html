@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Page 01</title>
+	
+</head>
+<body>
+	<h1 id="title">Lorem ipsum dolor sit amet</h1>
+	<p class="txt">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione numquam illo, doloribus aliquam temporibus ipsa aut, laborum hic! Tempora quam iusto, ullam similique corporis quibusdam placeat quod earum quia veritatis!
+	</p>
+	<p class="txt">Corporis <a href="http://dir.bg" title="External">voluptate</a> illo consequuntur ipsam, ex minus similique! Eaque quasi porro harum repellendus placeat consectetur, impedit rerum quos magni at distinctio illo, quisquam nobis neque quam doloribus aperiam ipsum iure.
+	</p>
+	<p class="txt">Excepturi adipisci <a href="#" >tempora</a> eaque ut saepe qui sunt, totam eum, quam magni hic, numquam voluptas voluptatum nihil quidem consequuntur dolores ea! Expedita iusto dolores, vitae ipsum eum iure consectetur tempora.
+	</p>
+	
+	<p>Consectetur adipisicing elit. <a href="./page08.html" title="Internal">Laborum</a>, neque earum consectetur sapiente repellat autem impedit ea! Maiores accusantium cupiditate ut necessitatibus eum. Facere, eos eum quibusdam laudantium quia unde?
+	</p>
+	<noscript>
+		Моля, разрешете JS или ползвайте HTML варианта на сайта
+		<a href="#">тук</a>
+	</noscript>
+
+	<script src="../js/jquery-3.1.1.min.js"></script>
+	<!--
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	-->
+	<script type="text/javascript" >
+		$(document).ready(function(){
+			$('[title]').css('text-decoration','none');
+			$('[title^="E"]').css('background-color','yellow');
+		});
+	</script>
+	
+
+	
+</body>
+</html>

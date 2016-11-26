@@ -3,7 +3,27 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Page 01</title>
-	
+	<script type="text/javascript" >
+		var func = function(){
+			document.write('<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>');
+		}
+
+		function showMessage( show ){
+			if( typeof show == 'function'){
+				show();	
+			}
+		}
+
+		showMessage(function(){
+			document.write('<h3>Hello JS!</h3>');
+		});
+
+		showMessage( function(){
+			window.alert('Hello World!');
+		});
+
+		showMessage(func);
+	</script>
 </head>
 <body>
 	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, dolorem aut. Officia nam sit laborum illum nemo totam voluptatum hic sint consectetur molestias cum aut similique blanditiis, culpa ex nisi.</p>
@@ -14,14 +34,7 @@
 	</noscript>
 
 	
-	<script src="../js/jquery-3.1.1.min.js"></script>
-	<!--
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-	-->
-	<script type="text/javascript" >
-		$(document).ready(function(){
-			$('body').prepend('<h2>Hello JQuery</h2>');
-		});
-	</script>
+
+	
 </body>
 </html>
