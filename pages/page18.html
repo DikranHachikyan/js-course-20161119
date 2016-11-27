@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Page 01</title>
+	<style>
+		ul{
+			list-style:none;
+		}
+
+		li img{
+			max-width: 200px;
+		}
+
+		li+li{
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<h1>Gallery</h1>
+	<ul id="gallery">
+		<li><img src="../images/chch-city-center320x240.png" alt="City Center"></li>
+		<li><img src="../images/chch-hagleypark320x240.png" alt="Hagley Park"></li>
+		<li><img src="../images/chch-millennium-monument320x240.png" alt="Millenium Monument"></li>
+		<li><img src="../images/chch-avon-river320x240.png" alt="Avon River"></li>
+	</ul>
+
+	<input type="button" value="&lt;&lt;" id="prv">
+	<input type="button" value="Auto" id="btn">
+	<input type="button" value="&gt;&gt;" id="nxt">
+
+	<script src="../js/jquery-3.1.1.min.js"></script>
+	<!--
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	-->
+	<script type="text/javascript" >
+		$(document).ready(function(){
+			var intervalId = 0;
+
+			$('#nxt').click(function(evt){
+				showNext();
+			});//on click button next 
+			
+			$('#prv').click(function(evt){
+				$('#gallery li:last-child').prependTo('#gallery');
+			});//on click button next 
+			
+			$('#btn').click(function(evt){
+				if( intervalId == 0 ){ //сменяме картинките ръчно
+					intervalId = window.setInterval(function(){
+													showNext();
+											}, 2000);
+					$(this).val('Stop');
+				}
+				else{
+					clearInterval(intervalId);
+					intervalId = 0; //!!!!!
+					$(this).val('Auto');
+				}
+				
+			}); //on click button Auto
+
+		});//on document ready
+		//--------------------------------------------------
+		function showNext(){
+			$('#gallery li:first-child').appendTo('#gallery');
+		}
+	</script>
+	
+
+	
+</body>
+</html>

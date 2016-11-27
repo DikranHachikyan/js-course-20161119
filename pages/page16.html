@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Page 01</title>
+	
+</head>
+<body>
+	<input type="button" value="Change Image" id="btn" >
+	<br>
+	<h1 id="title">City Center</h1>
+	<img src="../images/chch-city-center320x240.png" alt="City Center" id="pic">
+	<p id="info">Fully guided by our knowledgeable host, our Grand Tour shows off the best things to do in Christchurch</p>
+	<script src="../js/jquery-3.1.1.min.js"></script>
+	<!--
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	-->
+	<script type="text/javascript" >
+		$(document).ready(function(){
+			$('#btn').click(function(evt){
+				$('#title').html('Millennium Monument');
+				$('#pic')
+					.attr('src', '../images/chch-millennium-monument320x240.png')
+					.attr('alt', 'Millennium Monument')
+					.css('border', '2px solid blue');
+				$('#info').html('Neil Dawson\'s magnificent Chalice sculpture is located in Christchurch\'s Cathedral Square.Chalice celebrates the new millennium and the 150th Anniversary of the founding of Christchurch')
+			});//on btn click
+		});//on document ready
+	</script>
+	
+
+	
+</body>
+</html>

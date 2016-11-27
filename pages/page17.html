@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Page 01</title>
+	
+</head>
+<body>
+	<h1>F A Q</h1>
+	<dl>
+		<dt><a href="#">Lorem ipsum dolor sit amet?</a></dt>
+		<dd>Consectetur adipisicing elit. Minima totam laudantium possimus mollitia quasi quis ratione eaque rem accusamus, architecto delectus expedita beatae nostrum reprehenderit cumque libero nam illo aut.
+		</dd>
+		<dt><a href="#">Aspernatur ipsa?</a></dt>
+		<dd>Repellat optio numquam, est soluta repellendus iusto quibusdam. Necessitatibus non, dolores atque, corrupti autem repudiandae quo earum nihil quia quasi.</dd>
+		<dt><a href="#">Cumque vel consequuntur sed temporibus?</a></dt>
+		<dd>Sit vitae fuga labore deleniti aut cum exercitationem, dolorum voluptate quo velit minus ad repellendus sint impedit?</dd>
+		<dt><a href="#">Animi, placeat sunt?</a></dt>
+		<dd>Ipsam natus harum fugit quasi laudantium magni, in odit ipsa illo dignissimos nostrum ratione odio similique ducimus necessitatibus accusantium.</dd>
+	</dl>
+
+	<input type="button" value="Button" onclick="this.value='Button Clicked!'">
+	<script src="../js/jquery-3.1.1.min.js"></script>
+	<!--
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	-->
+	<script type="text/javascript" >
+		$(document).ready(function(){
+			$('dd').hide();
+			$('dt').click(function(evt){
+				$('dd').hide();
+				$(this).next().slideToggle();
+			});//on dt click
+		});//on document ready
+	</script>
+	
+
+	
+</body>
+</html>
