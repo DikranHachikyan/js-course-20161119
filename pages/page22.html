@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Page 01</title>
+	<style>
+		ul{
+			list-style:none;
+		}
+		ul#gallery li{
+		    float: left;
+		    margin-right: 19px
+		}
+    
+		
+	</style>
+</head>
+<body>
+	<h1>Gallery</h1>
+	<div id="show">
+		<h3>Hagley Park</h3>
+		<img src="../pics-large/pic6.jpg" alt="Hagley Park" data-alt="Hagley Park" data-src="../pics-large/pic6.jpg">
+	</div>
+	<ul id="gallery">
+		<li><a href="#"><img src="../pics-small/pic1.jpg" alt="City Center" data-author="John Doe"></a></li>
+		<li><a href="#"><img src="../pics-small/pic2.jpg" alt="Millennium Monument" data-author="Maria Anders"></a></li>
+		<li><a href="#"><img src="../pics-small/pic4.jpg" alt="Avon River" data-author="Maria Anders"></a></li>
+		<li><a href="#"><img src="../pics-small/pic3.jpg" alt="Tourists Attractions" data-author="John Doe"></a></li>
+	</ul>
+
+
+	<script src="../js/jquery-3.1.1.min.js"></script>
+	<!--
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	-->
+	<script type="text/javascript" >
+		$(document).ready(function(){
+			var src = $('#show').find('img').data('src');
+			var alt = $('#show').find('img').data('alt');	
+
+			$('#gallery img').mouseover(function(evt){
+					//console.log('mouse over');
+					var imageName = $(this).attr('src');
+					var altProp = $(this).attr('alt');
+					var author = $(this).data('author');
+
+					imageName = imageName.replace('small','large');
+					changeImage($('#show').find('img'), imageName, altProp);
+					changeTitle($('#show').find('h3'), altProp + ' (<em>'+author+'</em>)');
+					
+			})// on mouse over
+			.mouseout(function(evt){
+					//console.log('mouse out');
+					changeImage($('#show').find('img'), src, alt);
+					changeTitle($('#show').find('h3'), alt);
+			});//on mouse out
+
+		});//on document ready
+		//--------------------------------------------------
+		function changeTitle(el,title){
+			el.html(title);
+		}
+		function changeImage( el, src, alt){
+			el.attr('src', src).attr('alt', alt);
+		}
+	</script>
+	
+
+	
+</body>
+</html>

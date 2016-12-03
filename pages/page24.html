@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Page 01</title>
+	<style>
+		ul{
+			list-style:none;
+		}
+		ul#gallery li{
+		    float: left;
+		    margin-right: 19px
+		}
+    
+		
+	</style>
+</head>
+<body>
+	
+	<script src="../js/jquery-3.1.1.min.js"></script>
+	<!--
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	-->
+	<script type="text/javascript" >
+		$(document).ready(function(){
+			var person = {
+				  "firstname": "John"
+				, "image": "pic1.jpg"
+				, age:25
+				, "lastname": "Doe"
+			};
+						
+			console.log('Person: ' + person.firstname + ' ' + person.lastname);
+
+			$.each(person , function(key, value){
+				console.log('Key:' + key + ' Value:' + value);	
+			});
+
+		});//on document ready
+		//--------------------------------------------------
+		
+	</script>
+	
+
+	
+</body>
+</html>

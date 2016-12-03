@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Page 01</title>
+	<style>
+		ul{
+			list-style:none;
+		}
+		ul#gallery li{
+		    float: left;
+		    margin-right: 19px
+		}
+    
+		
+	</style>
+</head>
+<body>
+	<h1>Gallery</h1>
+	<div id="show">
+		<h3>City Center</h3>
+		<img src="../pics-large/pic1.jpg" alt="City Center">
+	</div>
+	<ul id="gallery">
+		<li><a href="#"><img src="../pics-small/pic1.jpg" alt="City Center"></a></li>
+		<li><a href="#"><img src="../pics-small/pic2.jpg" alt="Millennium Monument"></a></li>
+		<li><a href="#"><img src="../pics-small/pic4.jpg" alt="Avon River"></a></li>
+		<li><a href="#"><img src="../pics-small/pic3.jpg" alt="Tourists Attractions"></a></li>
+	</ul>
+
+
+	<script src="../js/jquery-3.1.1.min.js"></script>
+	<!--
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	-->
+	<script type="text/javascript" >
+		$(document).ready(function(){
+			$('#gallery img').click(function(evt){
+				var imageName = $(this).attr('src');
+				var altProp = $(this).attr('alt');
+				
+				imageName = imageName.replace('small','large');
+				$('#show').find('img').attr('src', imageName)
+							  		  .attr('alt', altProp);
+				$('#show').find('h3').html(altProp);
+
+			});//on image click 
+		});//on document ready
+		//--------------------------------------------------
+	</script>
+	
+
+	
+</body>
+</html>

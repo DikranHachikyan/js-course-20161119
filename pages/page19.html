@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Page 01</title>
+	
+</head>
+<body>
+	
+	<h3 id="title">Lorem ipsum dolor sit amet</h3>
+
+	<img src="../images/chch-city-center320x240.png" alt="City Center" id="pic">
+	<p></p>
+	<input type="button" value="Change Image" id="btn">
+	<script src="../js/jquery-3.1.1.min.js"></script>
+	<!--
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	-->
+	<script type="text/javascript" >
+		$(document).ready(function(){
+			$('#btn').click(function(evt){
+
+				var imageName = window.prompt('Коя картинка искате да видите?(avon-river,canterbury-museum,hagleypark)');
+				if( typeof imageName !== 'string' || imageName === '' ){
+					imageName = 'city-center';
+					$('p').html('Не е избрана картинка');
+				}
+				else
+				{
+					$('p').empty();
+				}
+				$('#pic').attr('src', '../images/chch-'+imageName + '320x240.png');
+				
+
+			});
+
+			
+		});//on document ready
+	</script>
+	
+
+	
+</body>
+</html>
